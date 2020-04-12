@@ -1,0 +1,127 @@
+{
+  "name": "dressify-frontend",
+  "version": "1.0.0",
+  "description": "Dressify",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next -p 8000",
+    "build": "next build",
+    "start": "next start -p $PORT",
+    "export": "next export",
+    "test": "NODE_ENV=test jest --watch",
+    "test-win": "SET NODE_ENV=test&& jest --watch",
+    "heroku-postbuild": "next build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "apollo": "^2.27.0",
+    "apollo-boost": "^0.4.7",
+    "apollo-cache-inmemory": "^1.6.5",
+    "apollo-client": "^2.4.2",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-plugin-styled-components": "^1.7.1",
+    "boost": "^0.63.1",
+    "date-fns": "^2.0.0-alpha.7",
+    "enzyme": "^3.6.0",
+    "enzyme-adapter-react-16": "^1.5.0",
+    "graphql": "^14.0.2",
+    "graphql-tag": "^2.9.2",
+    "lodash.debounce": "^4.0.8",
+    "lodash.throttle": "^4.1.1",
+    "next": "^9.3.4",
+    "next-with-apollo": "^5.0.0",
+    "nprogress": "^0.2.0",
+    "prop-types": "^15.6.2",
+    "react": "16.13.1",
+    "react-adopt": "^0.6.0",
+    "react-apollo": "^3.1.4",
+    "react-dom": "16.13.1",
+    "react-stripe-checkout": "^2.6.3",
+    "react-transition-group": "^2.5.0",
+    "styled-components": "^5.0.1",
+    "waait": "^1.0.2"
+  },
+  "jest": {
+    "setupFilesAfterEnv": [
+      "<rootDir>/jest.setup.js"
+    ],
+    "testPathIgnorePatterns": [
+      "<rootDir>/.next/",
+      "<rootDir>/node_modules/"
+    ],
+    "transform": {
+      ".*": "babel-jest",
+      "^.+\\.js?$": "babel-jest"
+    }
+  },
+  "babel": {
+    "env": {
+      "development": {
+        "presets": [
+          "next/babel"
+        ],
+        "plugins": [
+          [
+            "styled-components",
+            {
+              "ssr": true,
+              "displayName": true
+            }
+          ],
+          [
+            "inline-react-svg"
+          ]
+        ]
+      },
+      "production": {
+        "presets": [
+          "next/babel"
+        ],
+        "plugins": [
+          [
+            "styled-components",
+            {
+              "ssr": true,
+              "displayName": true
+            }
+          ],
+          [
+            "inline-react-svg"
+          ]
+        ]
+      },
+      "test": {
+        "presets": [
+          [
+            "next/babel",
+            {
+              "preset-env": {
+                "modules": "commonjs"
+              }
+            }
+          ]
+        ],
+        "plugins": [
+          [
+            "styled-components",
+            {
+              "ssr": true,
+              "displayName": true
+            }
+          ],
+          [
+            "inline-react-svg"
+          ]
+        ]
+      }
+    }
+  },
+  "devDependencies": {
+    "@apollo/client": "^3.0.0-beta.43",
+    "@apollo/react-testing": "^3.1.4",
+    "babel-jest": "^25.2.4",
+    "babel-plugin-inline-react-svg": "^1.1.1"
+  }
+}
